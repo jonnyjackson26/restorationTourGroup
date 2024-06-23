@@ -1,3 +1,10 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 
@@ -9,11 +16,15 @@ body {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #333;
     color: white;
     padding: 1rem 0;
-    font-family: 'Lora', serif;
 }
+
 
 header .container {
     display: flex;
@@ -25,6 +36,10 @@ header .container {
 header .logo {
     font-weight: 700;
     font-size: 1.5rem;
+}
+
+nav {
+    position: relative;
 }
 
 nav ul {
@@ -45,6 +60,7 @@ nav a {
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
     font-weight: 500;
+    padding: 1rem;
 }
 
 nav a:hover {
@@ -53,39 +69,54 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: red;
+    /* Example hover color */
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333;
+    background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    right: 0;
-    left: auto;
+    z-index: 3;
+    /* Ensure dropdown is above hero */
 }
 
 .dropdown-content a {
-    color: white;
+    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #575757;
+    background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .hero {
-    background-image: url('images/temple3.jpg');
+    background-image: url('kirtland-temple.jpg');
     /* Replace with your image path */
     background-size: cover;
     background-position: center;
@@ -97,6 +128,8 @@ nav a:hover {
     text-align: center;
     padding: 0 2rem;
     position: relative;
+    z-index: 1;
+    /* Ensure hero is below header */
 }
 
 .hero::before {
@@ -107,12 +140,14 @@ nav a:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: 2;
+    /* Overlay with transparency */
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    /* Ensure content is above overlay */
     max-width: 800px;
 }
 
@@ -158,36 +193,138 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
     font-family: 'Lora', serif;
+    position: relative;
+    z-index: 2;
+    /* Ensure footer is above hero */
 }
 
+
+
+
+
+
+
+/* Media Query for Tablets and Smaller Screens */
 @media (max-width: 768px) {
     header .container {
-        flex-direction: column;
+        padding: 0 1rem;
+        /* Adjust padding for smaller screens */
     }
 
-    nav ul {
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 4.5rem;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1;
         flex-direction: column;
+        /* Adjust for vertical alignment */
         align-items: center;
     }
 
-    nav li {
-        margin: 0.5rem 0;
+    .nav-list.active {
+        display: flex;
+        /* Show the nav-list when active */
     }
 
-    .hero-content {
-        padding: 0 1rem;
+    .nav-list li {
+        margin: 1rem 0;
+        text-align: center;
+        /* Center-align menu items */
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .nav-list li a {
+        padding: 1rem;
+        display: block;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .nav-list li a:hover {
+        background-color: #555;
+        /* Darker background on hover */
     }
 
-    .buttons {
-        flex-direction: column;
-        gap: 0.5rem;
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+        font-size: 16px;
+        color: white;
+        background-color: inherit;
+        padding: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+        /* Full width of parent container */
+        max-width: 100vw;
+        /* Maximum width of viewport */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        left: 0;
+        top: 100%;
+        /* Position below dropbtn */
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #555;
+        /* Darker background on hover */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Ensure menu toggle is visible */
+        cursor: pointer;
+        padding: 1rem;
+        z-index: 2;
+        /* Ensure toggle is above nav-list */
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px auto;
+        transition: all 0.3s ease;
+        /* Smooth transition for bars */
+    }
+
+    /* Animation for hamburger bars */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+        /* Hide middle bar */
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
     }
 }
