@@ -22,9 +22,9 @@ header .container {
     padding: 0 2rem;
 }
 
-header h1 {
-    margin: 0;
+header .logo {
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 nav ul {
@@ -32,22 +32,56 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 nav li {
     margin-left: 1rem;
+    position: relative;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     font-weight: 500;
 }
 
 nav a:hover {
     color: #ff6347;
     /* Tomato color for hover */
+    transform: translateY(-2px);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    right: 0;
+    left: auto;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container {
