@@ -4,78 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoration Tour Group</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/navbar/navbarStyles.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">Restoration Tour Group</div>
-            <nav>
-                <ul>
-                    <li><a href="/aboutus/index.html">About Us</a></li>
-                    <li><a href="/testimonials/index.html">Testimonials</a></li>
-                    <li><a href="/contact/index.html">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#tours">Our Tours</a>
-                        <div class="dropdown-content">
-                            <a href="#kirtland">Kirtland</a>
-                            <a href="#youth-tours">Youth Tours</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!--navbar-->
+    <div id="navbar"></div>
 
-    <section id="about" class="container">
-        <h2>About Joe and Restoration Tour Group</h2>
-        <p>As a nearly lifelong resident of Kirtland, Joe has been involved in and seen many of the changes that have
-            occurred in the Kirtland area over the last 40 years. As a child, he lived in the heart of the church
-            properties. As a young man, Joe discovered in his backyard the foundation of the original Ashery that, after
-            excavation, would later be rebuilt by the church along with the Sawmill that was owned by Joel Hills Johnson
-            (also in his backyard!). This discovery led to the rebuilding of the Historic Kirtland village in 2003.</p>
-        <p>During his time in Kirtland, he has been deeply committed to uniting the church with city leaders, other
-            faith leaders, and community members. In recent years, Joe has been involved in the restoration of the
-            Joseph & Emma Smith Home. Joe has worked closely with The Church of Jesus Christ of Latter-day Saints and
-            Community of Christ during the transfer of stewardship of the Kirtland Temple. He has a deep love for
-            Community of Christ, the other faith groups in the city, and all things Kirtland.</p>
-        <div class="images">
-            <img src="image1.jpg" alt="Historic Kirtland Village">
-            <img src="image2.jpg" alt="Joseph & Emma Smith Home">
-            <img src="image3.jpg" alt="Kirtland Temple">
-        </div>
-    </section>
 
-    <section id="tours" class="container">
-        <h2>Our Tours</h2>
-        <p>We offer guided tours of historic church sites in Kirtland, including:</p>
-        <ul>
-            <li>Kirtland Temple</li>
-            <li>Historic Kirtland Village</li>
-            <li>Joseph & Emma Smith Home</li>
-            <li>And many more...</li>
-        </ul>
-    </section>
 
-    <section id="contact" class="container">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p id="form-message"></p>
-    </section>
+
+
+
+    <main>
+        <section id="about" class="aboutus-container">
+            <h2>About Joe and Restoration Tour Group</h2>
+            <p>As a nearly lifelong resident of Kirtland, Joe has been involved in and seen many of the changes that
+                have
+                occurred in the Kirtland area over the last 40 years. As a child, he lived in the heart of the church
+                properties. As a young man, Joe discovered in his backyard the foundation of the original Ashery that,
+                after
+                excavation, would later be rebuilt by the church along with the Sawmill that was owned by Joel Hills
+                Johnson
+                (also in his backyard!). This discovery led to the rebuilding of the Historic Kirtland village in 2003.
+            </p>
+            <p>During his time in Kirtland, he has been deeply committed to uniting the church with city leaders, other
+                faith leaders, and community members. In recent years, Joe has been involved in the restoration of the
+                Joseph & Emma Smith Home. Joe has worked closely with The Church of Jesus Christ of Latter-day Saints
+                and
+                Community of Christ during the transfer of stewardship of the Kirtland Temple. He has a deep love for
+                Community of Christ, the other faith groups in the city, and all things Kirtland.</p>
+            <div class="about-images">
+                <img src="image1.jpg" alt="Historic Kirtland Village">
+                <img src="image2.jpg" alt="Joseph & Emma Smith Home">
+                <img src="image3.jpg" alt="Kirtland Temple">
+            </div>
+        </section>
+
+        <section id="tours" class="aboutus-container">
+            <h2>Our Tours</h2>
+            <p>We offer guided tours of historic church sites in Kirtland, including:</p>
+            <ul>
+                <li>Kirtland Temple</li>
+                <li>Historic Kirtland Village</li>
+                <li>Joseph & Emma Smith Home</li>
+                <li>And many more...</li>
+            </ul>
+        </section>
+    </main>
+
+
+
+
+
+
+
 
     <footer>
         <div class="container">
@@ -83,7 +72,15 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/navbar/navbar.js"></script>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
