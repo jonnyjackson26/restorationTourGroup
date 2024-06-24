@@ -19,6 +19,8 @@ header .container {
 header .logo {
     font-weight: 700;
     font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
 }
 
 nav {

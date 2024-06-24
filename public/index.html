@@ -11,35 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="navbarStyles.css">
+    <link rel="stylesheet" href="navbar/navbarStyles.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">Restoration Tour Group</div>
-            <nav>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-list">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="our-tours/index.html" class="dropbtn">Our Tours</a>
-                        <div class="dropdown-content">
-                            <a href="#kirtland">Kirtland</a>
-                            <a href="#youth-tours">Youth Tours</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!--navbar-->
+    <div id="navbar"></div>
 
     <section class="hero">
         <div class="hero-content">
@@ -52,7 +30,7 @@
                 Kirtland’s future that we are seeing fulfilled today.</p>
             <div class="buttons">
                 <a href="#tours" class="btn">Learn More About Tours</a>
-                <a href="tel:1234567890" class="btn">Call</a>
+                <a href="tel:4407961642" class="btn">Call</a>
             </div>
         </div>
     </section>
@@ -63,6 +41,7 @@
         </div>
     </footer>
 
+    <script src="navbar/navbar.js"></script>
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.querySelector('.nav-list');
