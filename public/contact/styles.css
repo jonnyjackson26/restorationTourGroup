@@ -6,6 +6,13 @@ body {
     padding: 0;
 }
 
+@media (max-width: 768px) {
+    main.contact {
+        padding-top: 90px;
+        /* so that the navbar doesnt cover screens content */
+    }
+}
+
 .contact {
     padding: 4rem 1rem;
     max-width: 800px;

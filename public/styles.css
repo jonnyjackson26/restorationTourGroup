@@ -98,3 +98,12 @@ footer {
     z-index: 2;
     /* Ensure footer is above hero */
 }
+
+/* Mobile-friendly styles */
+@media (max-width: 768px) {
+
+    main.hero {
+        padding-top: 90px;
+        /* so that the navbar doesnt cover screens content */
+    }
+}

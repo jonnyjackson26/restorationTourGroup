@@ -215,6 +215,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    main.ourToursMainSection {
+        padding-top: 90px;
+        /* so that the navbar doesnt cover screens content */
+    }
+
     header .container {
         padding: 0 1rem;
         /* Adjust padding for smaller screens */

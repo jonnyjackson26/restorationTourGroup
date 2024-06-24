@@ -64,7 +64,13 @@ body {
 }
 
 /* Mobile-friendly styles */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+    main.testimonials {
+        padding-top: 90px;
+        /* so that the navbar doesnt cover screens content */
+    }
+
     .testimonials {
         padding: 2rem 1rem;
     }
