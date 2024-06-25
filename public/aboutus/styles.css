@@ -6,6 +6,11 @@ body {
     padding: 0;
 }
 
+main.aboutUsSection {
+    padding-top: 60px;
+    /* so that the navbar doesnt cover screens content */
+}
+
 .aboutus-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -78,7 +83,13 @@ body {
 }
 
 /* Mobile-friendly styles */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+    main.aboutUsSection {
+        padding-top: 90px;
+        /* so that the navbar doesnt cover screens content */
+    }
+
     .container {
         padding: 1rem;
     }
